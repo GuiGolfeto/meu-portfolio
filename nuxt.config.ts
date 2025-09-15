@@ -20,9 +20,16 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
 
   // Regras para SPA fallback em hosts estáticos
-  nitro: { prerender: { crawlLinks: true } },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      // fallback de segurança: não matar o build caso algum /projects/ apareça
+      failOnError: false
+    }
+  },
   routeRules: {
-    '/**': { prerender: true } // gera estático
+    '/**': { prerender: true },
+    '/projects/**': { prerender: false } // gera estático
   },
 
   // gera site estático com `npx nuxi generate`
