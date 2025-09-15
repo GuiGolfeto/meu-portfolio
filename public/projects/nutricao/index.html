@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Nutricionista — Primeira Consulta</title>
+        <meta name="description"
+            content="Atendimento nutricional humanizado. Agende sua primeira consulta ou fale comigo no WhatsApp." />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Nutricionista — Primeira Consulta" />
+        <meta property="og:description"
+            content="Atendimento nutricional humanizado. Agende sua primeira consulta ou fale comigo no WhatsApp." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image"
+            content="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop" />
+        <meta property="og:url" content />
+
+        <!-- JSON-LD (ajuda no SEO) -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Nutricionista — Atendimento Personalizado",
+                "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200&auto=format&fit=crop",
+                "telephone": "+55 11 90000-0000",
+                "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua Exemplo, 123",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "postalCode": "00000-000",
+                "addressCountry": "BR"
+                },
+                "url": "",
+                "sameAs": ["https://www.instagram.com/"]
+            }
+        </script>
+
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="wrap nav">
+                <a href="#" class="brand" aria-label="Início">
+                    <span class="logo">N</span>
+                    <span>Nutricionista</span>
+                </a>
+                <nav class="menu menu-desktop" aria-label="Navegação primária">
+                    <a href="#especialidades">Especialidades</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#faq">Dúvidas</a>
+                    <a href="#contato" class="btn ghost">Contato</a>
+                    <a href="#agendar" class="btn primary">Agendar consulta</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section class="hero" id="inicio">
+                <div class="wrap hero-grid">
+                    <div>
+                        <div class="eyebrow">Nutrição baseada em
+                            evidências</div>
+                        <h1>Alimentação simples, resultados reais.</h1>
+                        <p class="lead">Atendimento humanizado e plano alimentar
+                            sob medida para sua rotina. Agende sua primeira
+                            consulta em poucos cliques ou fale comigo no
+                            WhatsApp.</p>
+                        <div class="hero-cta">
+                            <a class="btn primary" id="btn-agendar-hero"
+                                href="#agendar">Agendar consulta</a>
+                            <a class="btn" id="btn-whats-hero" target="_blank"
+                                rel="noopener">Falar no WhatsApp</a>
+                        </div>
+                        <div class="hero card" style="margin-top:16px;">
+                            <small class="muted">Tempo médio de atendimento:
+                                50–60 min · Online ou presencial</small>
+                        </div>
+                    </div>
+                    <div class="hero-img">
+                        <img
+                            src="./img/hero.png"
+                            alt="Mesa com alimentos frescos e notebook" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- ESPECIALIDADES (faixa verde + cards) -->
+            <section id="especialidades" class="specialties-band"
+                aria-labelledby="titulo-especialidades">
+                <div class="wrap">
+                    <h2 id="titulo-especialidades">Especialidades</h2>
+                    <p class="sub sub-light">Atendimento especializado para
+                        diferentes objetivos e necessidades.</p>
+
+                    <div class="services-icons" role="list">
+                        <div class="service-card" role="listitem"
+                            aria-label="Nutrição Clínica">
+                            <!-- ícone doc/coração -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="14" height="16"
+                                    rx="2"></rect>
+                                <path d="M7 8h8"></path><path
+                                    d="M7 12h5"></path>
+                                <path
+                                    d="M19 14c-1 .67-2 1-3 1-2 0-3-2-5-2-1 0-2 .33-3 1"></path>
+                            </svg>
+                            <h3>Nutrição Clínica</h3>
+                        </div>
+
+                        <div class="service-card" role="listitem"
+                            aria-label="Nutrição Funcional">
+                            <!-- ícone coração -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"></path>
+                                <path d="M7 12h4"></path><path
+                                    d="M13 12h4"></path>
+                            </svg>
+                            <h3>Nutrição Funcional</h3>
+                        </div>
+
+                        <div class="service-card" role="listitem"
+                            aria-label="Nutrição Estética">
+                            <!-- ícone diamante -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z"></path>
+                            </svg>
+                            <h3>Nutrição Estética</h3>
+                        </div>
+
+                        <div class="service-card" role="listitem"
+                            aria-label="Nutrição Esportiva">
+                            <!-- ícone folha -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M11 21C15 21 21 15 21 9a7 7 0 0 0-7-7C8 2 3 7 3 12c0 3 2 6 5 7"></path>
+                            </svg>
+                            <h3>Nutrição Esportiva</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVIÇOS -->
+            <section id="servicos">
+                <div class="wrap">
+                    <h2>Como posso ajudar</h2>
+                    <p class="sub muted">Protocolos personalizados com foco em
+                        saúde, energia e bem-estar.</p>
+                    <div class="grid">
+                        <article class="card"><h3>Consulta individual</h3><p
+                                class="muted">Avaliação completa, metas claras e
+                                plano alimentar realista para sua
+                                rotina.</p></article>
+                        <article class="card"><h3>Emagrecimento saudável</h3><p
+                                class="muted">Estrategias nutricionais
+                                sustentáveis, sem dietas restritivas e sem
+                                culpa.</p></article>
+                        <article class="card"><h3>Performance e rotina</h3><p
+                                class="muted">Orientação para treinos, trabalho
+                                e sono — nutrição que acompanha seu
+                                dia.</p></article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SOBRE -->
+            <section id="sobre">
+                <div class="wrap about">
+                    <div class="photo">
+                        <img
+                            src="./img/sobre.png"
+                            alt="Foto da nutricionista no consultório" />
+                    </div>
+                    <div>
+                        <h2>Sobre mim</h2>
+                        <p class="muted">Sou nutricionista formada, apaixonada
+                            por traduzir ciência em prática simples. Meu
+                            objetivo é te acompanhar com empatia e estratégia
+                            para que a alimentação caiba no seu dia, não o
+                            contrário.</p>
+                        <ul class="muted">
+                            <li>✔ Atendimento online e presencial</li>
+                            <li>✔ Planos alimentares práticos</li>
+                            <li>✔ Acompanhamento por WhatsApp</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMO FUNCIONA -->
+            <section>
+                <div class="wrap">
+                    <h2>Como funciona</h2>
+                    <div class="steps">
+                        <div class="step"><div
+                                class="n">1</div><strong>Agendamento</strong><p
+                                class="muted">Escolha um horário disponível ou
+                                me chame no WhatsApp.</p></div>
+                        <div class="step"><div
+                                class="n">2</div><strong>Consulta</strong><p
+                                class="muted">Bate-papo inicial, histórico e
+                                objetivos. Plano alinhado à sua
+                                rotina.</p></div>
+                        <div class="step"><div
+                                class="n">3</div><strong>Acompanhamento</strong><p
+                                class="muted">Ajustes por mensagem e
+                                reavaliações para manter a constância.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA STRIP -->
+            <section class="strip" id="agendar">
+                <div class="wrap">
+                    <div class="box">
+                        <div>
+                            <h3 style="margin:0">Pronto(a) para começar?</h3>
+                            <p class="muted" style="margin:6px 0 0">Agende sua
+                                primeira consulta agora ou mande uma mensagem
+                                com suas dúvidas.</p>
+                        </div>
+                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                            <a class="btn primary"
+                                id="btn-agendar-strip">Agendar consulta</a>
+                            <a class="btn" id="btn-whats-strip" target="_blank"
+                                rel="noopener">Falar no WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOCO AGENDAMENTO -->
+            <section id="contato">
+                <div class="wrap">
+                    <h2>Preferir marcar pelo Google Agenda?</h2>
+                    <p class="sub muted">Se você já usa <strong>Agenda de
+                            compromissos</strong> do Google (Workspace), defina
+                        a URL abaixo no código para abrir direto sua página de
+                        agendamentos.
+                        Caso não tenha, use o criador de evento rápido abaixo (o
+                        cliente abre a Agenda já preenchida).</p>
+
+                    <div class="card" style="margin-top:16px;">
+                        <form id="form-cal"
+                            style="display:grid; grid-template-columns: repeat(3,1fr); gap: 10px;">
+                            <div>
+                                <label for="nome">Nome</label>
+                                <input id="nome" name="nome" type="text"
+                                    placeholder="Seu nome" required
+                                    style="width:100%; padding:10px; border:1px solid var(--border); border-radius:10px;">
+                            </div>
+                            <div>
+                                <label for="data">Data</label>
+                                <input id="data" name="data" type="date"
+                                    required
+                                    style="width:100%; padding:10px; border:1px solid var(--border); border-radius:10px;">
+                            </div>
+                            <div>
+                                <label for="hora">Hora</label>
+                                <input id="hora" name="hora" type="time"
+                                    required
+                                    style="width:100%; padding:10px; border:1px solid var(--border); border-radius:10px;">
+                            </div>
+                            <div
+                                style="grid-column: 1 / -1; display:flex; gap:10px; justify-content:flex-end;">
+                                <button type="submit" class="btn primary">Abrir
+                                    na Google Agenda</button>
+                                <button type="button" class="btn"
+                                    id="limpar">Limpar</button>
+                            </div>
+                        </form>
+                        <small class="muted">Obs.: O evento é criado na Agenda
+                            do cliente. Para página de horários disponíveis
+                            (Agenda de compromissos), configure a variável
+                            <code>APPOINTMENT_URL</code> no script.</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq">
+                <div class="wrap faq">
+                    <h2>Dúvidas frequentes</h2>
+                    <details>
+                        <summary>O atendimento é online ou presencial?</summary>
+                        <p>Ambos. Você escolhe a modalidade que preferir no
+                            agendamento.</p>
+                    </details>
+                    <details>
+                        <summary>Quanto tempo dura a consulta?</summary>
+                        <p>Entre 50 e 60 minutos, dependendo do caso.</p>
+                    </details>
+                    <details>
+                        <summary>Recebo um plano alimentar?</summary>
+                        <p>Sim. Montamos um plano prático e ajustável à sua
+                            rotina, com acompanhamento por mensagem.</p>
+                    </details>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="wrap"
+                style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+                <div>© <span id="year"></span> Nutricionista — Todos os direitos
+                    reservados.</div>
+                <div class="muted">Desenvolvido por <a
+                        href="https://guilhermegolfeto.dev" target="_blank"
+                        rel="noopener">GG Systems</a></div>
+            </div>
+        </footer>
+
+        <!-- Botão flutuante WhatsApp -->
+        <a class="fab" id="fab-whats" aria-label="Abrir WhatsApp"
+            target="_blank" rel="noopener">
+            <!-- Ícone WhatsApp (SVG) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"><path
+                    d="M21.54 15.35A9 9 0 1 1 18 3.5" /><path
+                    d="M22 12a10 10 0 1 1-18.36 6.64L2 22l3.36-1.64A10 10 0 0 1 22 12z" /><path
+                    d="M19.27 12.77a4.5 4.5 0 0 1-6.36 0L12 11.86" /></svg>
+        </a>
+
+        <script src="./config.js"></script>
+    </body>
+</html>

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <!-- ====== META BÁSICO ====== -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Vortex Digital — Agência de Marketing</title>
+        <meta name="description"
+            content="Agência de marketing digital focada em performance. Tráfego pago, social media, SEO e sites de alta conversão." />
+        <link rel="canonical" href="https://seudominio.com/" />
+        <meta name="theme-color" content="#7C3AED" />
+
+        <!-- ====== OG / TWITTER ====== -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title"
+            content="Vortex Digital — Agência de Marketing" />
+        <meta property="og:description"
+            content="Performance e criação para marcas que querem crescer de verdade." />
+        <meta property="og:image"
+            content="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop" />
+
+        <!-- ====== BOOTSTRAP & ICONS ====== -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet">
+
+        <!-- ====== FONTE ====== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+
+        <style>
+    :root{
+      --bg: #0b0b10;
+      --card: #111118;
+      --muted: #c4c4cf;
+      --primary: #7C3AED;      /* roxo principal */
+      --primary-2: #9F67FF;    /* roxo claro p/ gradiente */
+      --white: #F6F6F9;
+      --border: #1B1B25;
+      --success: #22c55e;
+    }
+    html, body{
+      background: var(--bg);
+      color: var(--white);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      scroll-behavior: smooth; /* fallback; JS melhora */
+    }
+    a{ color: inherit; text-decoration: none; }
+    .navbar{
+      backdrop-filter: blur(8px);
+      background: rgba(11,11,16,0.6) !important;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-link{
+      color: var(--muted) !important;
+      font-weight: 500;
+    }
+    .nav-link.active, .nav-link:hover{
+      color: var(--white) !important;
+    }
+    .btn-primary{
+      --bs-btn-bg: var(--primary);
+      --bs-btn-border-color: var(--primary);
+      --bs-btn-hover-bg: #6b2bd6;
+      --bs-btn-hover-border-color: #6b2bd6;
+      --bs-btn-active-bg: #5f22c2;
+      --bs-btn-active-border-color: #5f22c2;
+      box-shadow: 0 0 0 .25rem rgba(124,58,237,.15);
+    }
+    .btn-outline-light{
+      --bs-btn-color: var(--white);
+      --bs-btn-border-color: #2a2a3a;
+      --bs-btn-hover-bg: #1a1a25;
+      --bs-btn-hover-border-color: #2a2a3a;
+    }
+    .hero{
+      position: relative;
+      padding-top: 120px;
+      padding-bottom: 80px;
+      background:
+        radial-gradient(1200px 600px at 80% -20%, rgba(124,58,237,.25), transparent 60%),
+        radial-gradient(800px 400px at -10% 10%, rgba(159,103,255,.18), transparent 60%),
+        linear-gradient(180deg, rgba(124,58,237,.06), transparent 60%);
+    }
+    .hero .badge{
+      background: rgba(124,58,237,.18);
+      color: #E9DDFF;
+      border: 1px solid rgba(124,58,237,.35);
+    }
+    .hero h1{
+      letter-spacing: -0.02em;
+    }
+    .hero p{
+      color: var(--muted);
+    }
+    .trusted{
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .section{
+      padding: 80px 0;
+    }
+    .card-dark{
+      background: linear-gradient(180deg, #12121a, #0f0f16);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .card-dark:hover{
+      border-color: #2a2a3a;
+    }
+    .icon-pill{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px; height: 46px;
+      border-radius: 999px;
+      background: rgba(124,58,237,.18);
+      border: 1px solid rgba(124,58,237,.35);
+      color: #E9DDFF;
+    }
+    .chip{
+      display:inline-flex; gap:.5rem; align-items:center;
+      padding:.35rem .6rem; font-size:.85rem; border-radius:999px;
+      border:1px solid var(--border); color: var(--muted);
+      background: #12121a;
+    }
+    .divider{
+      height:1px; background: var(--border); margin: 28px 0;
+    }
+    .price{
+      font-size: 40px; font-weight: 700;
+    }
+    .opacity-70{ opacity:.7; }
+    .opacity-80{ opacity:.8; }
+    .opacity-60{ opacity:.6; }
+
+    .footer{
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+    /* Portfólio mock */
+    .work{
+      aspect-ratio: 16/10;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background:
+       linear-gradient(180deg, rgba(124,58,237,.12), transparent 45%),
+       radial-gradient(800px 300px at 20% 0%, rgba(159,103,255,.2), transparent 60%),
+       #12121a;
+      display: grid; place-items: center;
+      color: #cbb6ff;
+      font-weight: 600;
+    }
+    /* Form */
+    .form-control, .form-select{
+      background: #0f0f16; border: 1px solid var(--border); color: var(--white);
+    }
+    .form-control::placeholder{ color: #7a7a8a; }
+
+    /* Helper para foco de seção ativa */
+    .link-active{
+      color: var(--white) !important;
+    }
+
+    /* ===== TRUSTED – versão destacada ===== */
+    .trusted-elevated{
+    padding: 52px 0;
+    background:
+        radial-gradient(900px 280px at 15% 0%, rgba(124,58,237,.10), transparent 60%),
+        radial-gradient(900px 280px at 85% 100%, rgba(159,103,255,.08), transparent 60%),
+        linear-gradient(180deg, rgba(124,58,237,.06), transparent 55%);
+    border-top: 1px solid rgba(124,58,237,.22);
+    border-bottom: 1px solid rgba(124,58,237,.16);
+    }
+
+    .trusted-kicker{
+    display:inline-block;
+    padding:.3rem .7rem;
+    font-size:.8rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#E9DDFF;
+    background: rgba(124,58,237,.16);
+    border:1px solid rgba(124,58,237,.35);
+    border-radius:999px;
+    }
+
+    .trusted-title{
+    margin: .8rem 0 0 0;
+    font-size:1.15rem;
+    color:#CFCFE6;
+    opacity:.85;
+    }
+
+    /* Logo “pílula” */
+    .logo-tile{
+    display:flex; align-items:center; justify-content:center;
+    min-height:64px; padding:14px;
+    border-radius:12px;
+    background:#101018;
+    border:1px solid #1b1b25;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, filter .25s ease, opacity .25s ease;
+    filter: grayscale(100%); opacity:.8;
+    }
+    .logo-tile:hover{
+    filter: grayscale(0%); opacity:1;
+    transform: translateY(-3px);
+    border-color: rgba(124,58,237,.45);
+    box-shadow: 0 6px 28px rgba(124,58,237,.12), inset 0 0 0 1px rgba(124,58,237,.2);
+    }
+
+    /* Quando usar imagens (SVG/PNG) */
+    .logo-tile img{
+    max-height:26px; width:auto; display:block;
+    opacity:.9;
+    }
+    .logo-text{ /* fallback se estiver usando texto */
+    font-weight:600; letter-spacing:.2px; color:#DAD7FF;
+    }
+
+    .portfolio-highlight{
+    background:
+        radial-gradient(1000px 400px at 20% 20%, rgba(124,58,237,.10), transparent 70%),
+        radial-gradient(900px 300px at 80% 80%, rgba(159,103,255,.08), transparent 70%);
+    border-top: 1px solid rgba(124,58,237,.15);
+    border-bottom: 1px solid rgba(124,58,237,.12);
+    padding: 90px 0;
+    }
+
+    /* Gradiente no título */
+    .section-title-gradient{
+    background: linear-gradient(90deg, #9F67FF, #7C3AED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    /* Card dos cases */
+    .case-card{
+    border-radius: 16px;
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(124,58,237,.25), rgba(15,15,22,.9));
+    border: 1px solid rgba(124,58,237,.25);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.05);
+    transition: all .35s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    }
+    .case-card::before{
+    content:"";
+    position:absolute;
+    top:-50%; left:-50%;
+    width:200%; height:200%;
+    background: radial-gradient(circle, rgba(124,58,237,.25), transparent 70%);
+    transform: rotate(25deg);
+    transition: all .6s ease;
+    opacity:0;
+    }
+    .case-card:hover::before{
+    opacity:1;
+    transform: rotate(0deg);
+    }
+    .case-card:hover{
+    transform: translateY(-6px) scale(1.03);
+    border-color: rgba(124,58,237,.6);
+    box-shadow: 0 8px 30px rgba(124,58,237,.2);
+    }
+    .case-card h5{
+    color:#E9DDFF;
+    font-weight:600;
+    }
+
+    /* Responsividade pequena */
+    @media (max-width: 575.98px){
+      .hero{ padding-top: 100px; padding-bottom: 60px; }
+      .price{ font-size: 34px; }
+    }
+  </style>
+    </head>
+    <body data-bs-spy="scroll" data-bs-target="#navbar"
+        data-bs-smooth-scroll="true" tabindex="0">
+
+        <!-- ====== NAVBAR ====== -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    <span class="text-white">Vortex</span> <span
+                        class="text-primary">Digital</span>
+                </a>
+                <button class="navbar-toggler text-white" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navContent"
+                    aria-controls="navContent" aria-expanded="false"
+                    aria-label="Menu">
+                    <i class="bi bi-list fs-2"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navContent">
+                    <ul class="navbar-nav ms-auto gap-lg-2">
+                        <li class="nav-item"><a class="nav-link"
+                                href="#servicos">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#portfolio">Cases</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#planos">Planos</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#depoimentos">Depoimentos</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#contato">Contato</a></li>
+                    </ul>
+                    <div class="ms-lg-3 mt-3 mt-lg-0">
+                        <a
+                            href="https://wa.me/5599999999999?text=Quero%20aumentar%20meus%20resultados%20com%20marketing"
+                            target="_blank" class="btn btn-primary">
+                            <i class="bi bi-whatsapp me-1"></i> Falar no
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ====== HERO ====== -->
+        <header class="hero">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <span class="badge rounded-pill mb-3">Agência de
+                            Performance</span>
+                        <h1 class="display-5 fw-bold">Cresça <span
+                                class="text-primary">mais rápido</span> com
+                            tráfego pago e conteúdo que converte.</h1>
+                        <p class="lead mt-3">Geramos demanda previsível para
+                            marcas que querem vender todos os dias. Estratégia,
+                            criação e mídia — num só lugar.</p>
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="#contato"
+                                class="btn btn-primary btn-lg">Solicitar
+                                proposta</a>
+                            <a href="#portfolio"
+                                class="btn btn-outline-light btn-lg">Ver
+                                cases</a>
+                        </div>
+                        <div class="d-flex gap-2 mt-4 flex-wrap">
+                            <span class="chip"><i
+                                    class="bi bi-rocket-takeoff"></i> Tráfego
+                                Pago</span>
+                            <span class="chip"><i
+                                    class="bi bi-bar-chart-line"></i> Social &
+                                Conteúdo</span>
+                            <span class="chip"><i class="bi bi-search"></i>
+                                SEO</span>
+                            <span class="chip"><i class="bi bi-window"></i>
+                                Landing Pages</span>
+                        </div>
+                        <div class="divider"></div>
+                        <p class="opacity-70">Média de <span
+                                class="text-success fw-semibold">+38%</span> em
+                            conversões nos primeiros 90 dias.</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card card-dark p-4 p-lg-5">
+                            <h5 class="mb-1" style="color: white">Diagnóstico
+                                gratuito</h5>
+                            <p class="opacity-70 mb-3">Em 15 minutos avaliamos
+                                seus canais e sugerimos um plano rápido de
+                                melhorias.</p>
+                            <form id="leadForm" novalidate>
+                                <div class="mb-3">
+                                    <label class="form-label"
+                                        style="color: rgb(183, 183, 183)">Nome</label>
+                                    <input type="text" class="form-control"
+                                        name="nome" placeholder="Seu nome"
+                                        required />
+                                    <div class="invalid-feedback">Informe seu
+                                        nome.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label"
+                                        style="color: rgb(183, 183, 183)">E-mail</label>
+                                    <input type="email" class="form-control"
+                                        name="email"
+                                        placeholder="voce@empresa.com"
+                                        required />
+                                    <div class="invalid-feedback">Informe um
+                                        e-mail válido.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label"
+                                        style="color: rgb(183, 183, 183)">Objetivo</label>
+                                    <select class="form-select" name="objetivo"
+                                        required>
+                                        <option value selected
+                                            disabled>Selecione</option>
+                                        <option>Vender mais online</option>
+                                        <option>Gerar leads B2B</option>
+                                        <option>Fortalecer marca</option>
+                                        <option>Tráfego local (loja
+                                            física)</option>
+                                    </select>
+                                    <div class="invalid-feedback">Selecione um
+                                        objetivo.</div>
+                                </div>
+                                <button type="submit"
+                                    class="btn btn-primary w-100">Quero meu
+                                    diagnóstico</button>
+                                <p class="small mt-3 opacity-60">Ao enviar, um
+                                    especialista entrará em contato por
+                                    e-mail/WhatsApp.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <section class="trusted trusted-elevated">
+            <div class="container">
+                <div class="text-center mb-3">
+                    <span class="trusted-kicker">Parceiros &
+                        Ferramentas</span>
+                    <h3 class="trusted-title">Stack que usamos no dia a
+                        dia</h3>
+                </div>
+
+                <div class="row g-3 g-md-4 justify-content-center">
+                    <!-- Troque <span> por <img> se tiver os SVGs das marcas -->
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="logo-tile">
+                            <span class="logo-text">Meta Ads</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="logo-tile">
+                            <span class="logo-text">Google Ads</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="logo-tile">
+                            <span class="logo-text">TikTok</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="logo-tile">
+                            <span class="logo-text">RD Station</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <div class="logo-tile">
+                            <span class="logo-text">HubSpot</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SERVIÇOS ====== -->
+        <section id="servicos" class="section">
+            <div class="container">
+                <div class="row align-items-end mb-4">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold">Serviços focados em resultado</h2>
+                        <p class="opacity-70 mt-2">Menos blá-blá-blá, mais
+                            performance. Estratégias práticas e mensuráveis.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card-dark p-4 h-100">
+                            <div class="icon-pill mb-3"><i
+                                    class="bi bi-bullseye"></i></div>
+                            <h5>Tráfego Pago</h5>
+                            <p class="opacity-70">Meta, Google e TikTok Ads com
+                                foco em conversão e ROAS.</p>
+                            <span class="chip"><i
+                                    class="bi bi-graph-up-arrow"></i>
+                                Performance</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card-dark p-4 h-100">
+                            <div class="icon-pill mb-3"><i
+                                    class="bi bi-megaphone"></i></div>
+                            <h5>Social & Conteúdo</h5>
+                            <p class="opacity-70">Calendário editorial,
+                                criativos e gestão das redes.</p>
+                            <span class="chip"><i
+                                    class="bi bi-lightning-charge"></i>
+                                Engajamento</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card-dark p-4 h-100">
+                            <div class="icon-pill mb-3"><i
+                                    class="bi bi-search"></i></div>
+                            <h5>SEO & Conteúdo</h5>
+                            <p class="opacity-70">Técnico + conteúdo para captar
+                                tráfego orgânico qualificado.</p>
+                            <span class="chip"><i class="bi bi-rocket"></i>
+                                Crescimento</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card-dark p-4 h-100">
+                            <div class="icon-pill mb-3"><i
+                                    class="bi bi-window"></i></div>
+                            <h5>Landing Pages</h5>
+                            <p class="opacity-70">Páginas rápidas, bonitas e
+                                feitas para converter.</p>
+                            <span class="chip"><i class="bi bi-cursor-fill"></i>
+                                Conversão</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== PORTFÓLIO ====== -->
+        <section id="portfolio" class="section portfolio-highlight">
+            <div class="container">
+                <div class="row align-items-end mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold section-title-gradient">Alguns
+                            resultados recentes</h2>
+                        <p class="opacity-70 mt-2">Exemplos de projetos e
+                            campanhas que geraram impacto real.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a href="#contato"
+                            class="btn btn-outline-light btn-lg">Quero um case
+                            como esse</a>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="case-card">
+                            <div class="case-content">
+                                <h5>E-commerce — ROAS 6.2x</h5>
+                            </div>
+                        </div>
+                        <div class="opacity-70 small mt-2">Otimização de funil +
+                            criativos</div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="case-card">
+                            <div class="case-content">
+                                <h5>Educação — +412% leads</h5>
+                            </div>
+                        </div>
+                        <div class="opacity-70 small mt-2">LP + automação e
+                            nutrição</div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="case-card">
+                            <div class="case-content">
+                                <h5>Local — +83% visitas</h5>
+                            </div>
+                        </div>
+                        <div class="opacity-70 small mt-2">Google Ads + SEO
+                            local</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== DIFERENCIAIS ====== -->
+        <section class="section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card-dark p-4 h-100">
+                            <h5 class="mb-2">Por que escolher a Vortex?</h5>
+                            <ul class="opacity-80 mb-0">
+                                <li class="mb-2"><i
+                                        class="bi bi-check2 text-success me-2"></i>
+                                    Plano claro de 90 dias</li>
+                                <li class="mb-2"><i
+                                        class="bi bi-check2 text-success me-2"></i>
+                                    Relatórios simples e objetivos</li>
+                                <li class="mb-2"><i
+                                        class="bi bi-check2 text-success me-2"></i>
+                                    Time enxuto, respostas rápidas</li>
+                                <li class="mb-2"><i
+                                        class="bi bi-check2 text-success me-2"></i>
+                                    Foco em ROI e crescimento sustentável</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-dark p-4 h-100">
+                            <h5 class="mb-2">Stack & ferramentas</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="chip"><i class="bi bi-google"></i>
+                                    Google Ads</span>
+                                <span class="chip"><i class="bi bi-meta"></i>
+                                    Meta Ads</span>
+                                <span class="chip"><i class="bi bi-tiktok"></i>
+                                    TikTok</span>
+                                <span class="chip"><i
+                                        class="bi bi-bar-chart-line"></i>
+                                    GA4</span>
+                                <span class="chip"><i
+                                        class="bi bi-envelope"></i>
+                                    RD/HubSpot</span>
+                                <span class="chip"><i class="bi bi-window"></i>
+                                    Webflow/Next</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#contato" class="btn btn-primary btn-lg">Vamos
+                        acelerar seus resultados</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== PLANOS ====== -->
+        <section id="planos" class="section">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Planos simples e transparentes</h2>
+                    <p class="opacity-70">Sem letras miúdas. Comece pelo
+                        essencial e evolua conforme o crescimento.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-dark p-4 h-100">
+                            <div
+                                class="d-flex justify-content-between align-items-center">
+                                <h5>Essencial</h5>
+                                <span class="chip">Indicado para início</span>
+                            </div>
+                            <div class="price mt-2">R$ 1.490<span
+                                    class="fs-6 opacity-70">/mês</span></div>
+                            <ul class="mt-3 opacity-80">
+                                <li>Gestão de 1 canal (Meta <em>ou</em>
+                                    Google)</li>
+                                <li>2 criativos/mês</li>
+                                <li>Relatório mensal</li>
+                                <li>Suporte em horário comercial</li>
+                            </ul>
+                            <a href="#contato"
+                                class="btn btn-primary w-100 mt-3">Começar no
+                                Essencial</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-dark p-4 h-100 border border-primary">
+                            <div
+                                class="d-flex justify-content-between align-items-center">
+                                <h5>Performance</h5>
+                                <span class="chip"><i
+                                        class="bi bi-star-fill text-warning"></i>
+                                    Mais vendido</span>
+                            </div>
+                            <div class="price mt-2">R$ 2.990<span
+                                    class="fs-6 opacity-70">/mês</span></div>
+                            <ul class="mt-3 opacity-80">
+                                <li>Meta + Google</li>
+                                <li>6 criativos/mês</li>
+                                <li>LP de campanha inclusa</li>
+                                <li>Relatório quinzenal</li>
+                            </ul>
+                            <a href="#contato"
+                                class="btn btn-primary w-100 mt-3">Ir de
+                                Performance</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-4">
+                        <div class="card-dark p-4 h-100">
+                            <div
+                                class="d-flex justify-content-between align-items-center">
+                                <h5>Scale</h5>
+                                <span class="chip">Para crescer
+                                    agressivamente</span>
+                            </div>
+                            <div class="price mt-2">Sob consulta</div>
+                            <ul class="mt-3 opacity-80">
+                                <li>Omnichannel + SEO</li>
+                                <li>Squad dedicado</li>
+                                <li>Testes semanais</li>
+                                <li>Relatórios e daily checkpoints</li>
+                            </ul>
+                            <a href="#contato"
+                                class="btn btn-primary w-100 mt-3">Falar com
+                                especialista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== DEPOIMENTOS ====== -->
+        <section id="depoimentos" class="section">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Clientes que confiam</h2>
+                    <p class="opacity-70">O que dizem sobre trabalhar com a
+                        gente.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card-dark p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="https://i.pravatar.cc/80?img=12"
+                                    class="rounded-circle" width="48"
+                                    height="48" alt="Cliente 1">
+                                <div>
+                                    <div class="fw-semibold">Ana Rodrigues</div>
+                                    <div class="small opacity-70">E-commerce de
+                                        Moda</div>
+                                </div>
+                            </div>
+                            <p class="mb-0 opacity-80">“Em 3 meses, nossas
+                                vendas dobraram. O processo é claro e focado em
+                                métricas reais.”</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-dark p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="https://i.pravatar.cc/80?img=5"
+                                    class="rounded-circle" width="48"
+                                    height="48" alt="Cliente 2">
+                                <div>
+                                    <div class="fw-semibold">Bruno Lima</div>
+                                    <div class="small opacity-70">Edtech</div>
+                                </div>
+                            </div>
+                            <p class="mb-0 opacity-80">“A LP e as campanhas
+                                trouxeram leads qualificados. Atendimento rápido
+                                e direto.”</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-dark p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="https://i.pravatar.cc/80?img=32"
+                                    class="rounded-circle" width="48"
+                                    height="48" alt="Cliente 3">
+                                <div>
+                                    <div class="fw-semibold">Marina Souza</div>
+                                    <div class="small opacity-70">Serviços
+                                        Locais</div>
+                                </div>
+                            </div>
+                            <p class="mb-0 opacity-80">“Aumentamos o fluxo na
+                                loja e conseguimos medir tudo. Excelente
+                                parceria.”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CTA ====== -->
+        <section class="section">
+            <div class="container">
+                <div class="card-dark p-5 text-center">
+                    <h3 class="fw-bold">Pronto para escalar seus
+                        resultados?</h3>
+                    <p class="opacity-70 mb-4">Conte com uma operação ágil,
+                        criativa e obcecada por ROI.</p>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a
+                            href="https://wa.me/5599999999999?text=Quero%20uma%20proposta"
+                            target="_blank" class="btn btn-primary btn-lg">
+                            <i class="bi bi-whatsapp me-1"></i> Falar agora
+                        </a>
+                        <a href="#contato"
+                            class="btn btn-outline-light btn-lg">Pedir
+                            proposta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CONTATO ====== -->
+        <section id="contato" class="section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold">Entre em contato</h2>
+                        <p class="opacity-70">Conte sobre seu momento e seus
+                            objetivos. Montamos um plano sob medida.</p>
+
+                        <div class="card-dark p-4 mt-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-pill"><i
+                                        class="bi bi-envelope"></i></div>
+                                <div>
+                                    <div class="fw-semibold">E-mail</div>
+                                    <a href="mailto:contato@seudominio.com"
+                                        class="opacity-80">contato@seudominio.com</a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-pill"><i
+                                        class="bi bi-telephone"></i></div>
+                                <div>
+                                    <div class="fw-semibold">WhatsApp</div>
+                                    <a class="opacity-80" target="_blank"
+                                        href="https://wa.me/5599999999999">+55
+                                        (99) 99999-9999</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-dark p-4">
+                            <h5 class="mb-3">Briefing rápido</h5>
+                            <form id="contactForm" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Nome</label>
+                                        <input type="text" name="nome"
+                                            class="form-control"
+                                            placeholder="Seu nome" required />
+                                        <div class="invalid-feedback">Informe
+                                            seu nome.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label">Empresa</label>
+                                        <input type="text" name="empresa"
+                                            class="form-control"
+                                            placeholder="Sua empresa" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">E-mail</label>
+                                        <input type="email" name="email"
+                                            class="form-control"
+                                            placeholder="voce@empresa.com"
+                                            required />
+                                        <div class="invalid-feedback">Informe um
+                                            e-mail válido.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label
+                                            class="form-label">WhatsApp</label>
+                                        <input type="tel" name="fone"
+                                            class="form-control"
+                                            placeholder="(11) 9 9999-9999" />
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Objetivo
+                                            principal</label>
+                                        <select class="form-select"
+                                            name="objetivo" required>
+                                            <option value selected
+                                                disabled>Selecione</option>
+                                            <option>Vender mais online</option>
+                                            <option>Gerar leads B2B</option>
+                                            <option>Fortalecer marca</option>
+                                            <option>Aumentar visitas na
+                                                loja</option>
+                                        </select>
+                                        <div class="invalid-feedback">Selecione
+                                            um objetivo.</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label
+                                            class="form-label">Mensagem</label>
+                                        <textarea name="mensagem"
+                                            class="form-control" rows="4"
+                                            placeholder="Fale sobre seu momento..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100"
+                                            type="submit">Enviar
+                                            briefing</button>
+                                        <div id="contactAlert"
+                                            class="alert alert-success mt-3 d-none"
+                                            role="alert">
+                                            Recebemos seu briefing. Em breve
+                                            entraremos em contato!
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="small opacity-60 mt-3">* Este formulário é
+                                demonstrativo. Integre com seu backend, Google
+                                Sheets ou ferramenta de CRM.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="footer py-4">
+            <div class="container text-center">
+                <div class="small">© <span id="y"></span> Vortex Digital. Feito
+                    com ❤ para marcas que querem crescer.</div>
+                <div class="small mt-2 opacity-70">
+                    <a class="me-3" href="#servicos">Serviços</a>
+                    <a class="me-3" href="#portfolio">Cases</a>
+                    <a class="me-3" href="#planos">Planos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ====== SCRIPTS ====== -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+    // Ano no footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Scroll suave (melhor que o nativo p/ compensar header fixo)
+    const offset = 70;
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          // Close navbar on mobile
+          const nav = document.getElementById('navContent');
+          if(nav.classList.contains('show')){
+            new bootstrap.Collapse(nav).hide();
+          }
+        }
+      });
+    });
+
+    // Ativar link da navbar conforme seção visível
+    const sections = [...document.querySelectorAll('section, header.hero')];
+    const links = [...document.querySelectorAll('.nav-link')];
+    const map = new Map(sections.map(s => [s.id || 'hero', s]));
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.id || 'hero';
+        if(entry.isIntersecting){
+          links.forEach(l => l.classList.remove('link-active'));
+          const active = document.querySelector(`.nav-link[href="#${id}"]`);
+          if(active){ active.classList.add('link-active'); }
+        }
+      });
+    }, { threshold: 0.6 });
+
+    sections.forEach(s => io.observe(s));
+
+    // Validação simples dos forms (fake submit)
+    function handleForm(formId, successId){
+      const form = document.getElementById(formId);
+      const alertBox = successId ? document.getElementById(successId) : null;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(!form.checkValidity()){
+          e.stopPropagation();
+        }else{
+          if(alertBox){
+            alertBox.classList.remove('d-none');
+            setTimeout(() => alertBox.classList.add('d-none'), 4000);
+          }else{
+            alert('Recebido! (Demo)');
+          }
+          form.reset();
+        }
+        form.classList.add('was-validated');
+      });
+    }
+    handleForm('leadForm');
+    handleForm('contactForm', 'contactAlert');
+  </script>
+    </body>
+</html>

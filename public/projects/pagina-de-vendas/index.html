@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <!-- ====== BASIC META ====== -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>🚀 Método RedProfit — Marketing Digital para Lucrar no
+            Piloto</title>
+        <meta name="description"
+            content="Domine o marketing digital com um método prático para gerar vendas todos os dias. Landing page de alta conversão com CTA claro para checkout." />
+        <link rel="canonical" href="https://www.seudominio.com/" />
+        <meta name="theme-color" content="#EF233C" />
+
+        <!-- ====== OPEN GRAPH / TWITTER ====== -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title"
+            content="Método RedProfit — Marketing Digital para Lucrar" />
+        <meta property="og:description"
+            content="Aprenda a captar leads e converter em vendas com um funil simples. Vagas limitadas." />
+        <meta property="og:image"
+            content="https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=1600&auto=format&fit=crop" />
+        <meta property="og:url" content="https://www.seudominio.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <!-- ====== FAVICON (troque) ====== -->
+        <link rel="icon" href="/favicon.ico" />
+
+        <!-- ====== FONTS ====== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+        <!-- ====== BOOTSTRAP ====== -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+
+        <!-- ====== CUSTOM STYLES ====== -->
+        <style>
+      :root{
+        --red:#EF233C;
+        --red-dark:#D90429;
+        --black:#0B0B0D;
+        --gray-900:#111216;
+        --gray-700:#1B1D23;
+        --gray-500:#80828a;
+        --gray-400:#d0d0d0; /* texto secundário mais claro */
+        --white:#ffffff;
+      }
+
+      html{scroll-behavior:smooth}
+      body{font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--black); color:var(--white);}
+
+      /* Paleta e botões */
+      .bg-gradient-red{background: radial-gradient(1200px 600px at 20% -10%, rgba(239,35,60,.35), rgba(11,11,13,0.0)), linear-gradient(180deg, #0B0B0D 0%, #111216 100%);}
+      .text-red{color:var(--red)!important}
+      .btn-red{background:var(--red); color:#fff; border:none; box-shadow:0 8px 24px rgba(239,35,60,.4)}
+      .btn-red:hover{background:var(--red-dark); color:#fff}
+      .btn-outline-red{border:1px solid var(--red); color:#fff}
+      .btn-outline-red:hover{background:var(--red); color:#fff}
+      .badge-soft{background:rgba(239,35,60,.12); color:#fff; border:1px solid rgba(239,35,60,.3)}
+      .badge.bg-danger{background:var(--red)!important}
+
+      /* Navegação */
+      .nav-link{color:#d6d6d6}
+      .nav-link:hover,.nav-link.active{color:#fff}
+
+      /* Cards e seções */
+      .section{padding:72px 0}
+      .card-dark{background:linear-gradient(180deg,#14161B,#0F1014); border:1px solid #1C1F26; border-radius:16px; transition:all .25s ease}
+      .card-dark:hover{transform:translateY(-2px); box-shadow:0 14px 40px rgba(0,0,0,.45); border-color:#2a2f3d}
+      .outline{border:1px solid #252836; border-radius:16px; transition:all .2s ease}
+      .outline:hover{border-color:rgba(239,35,60,.6); box-shadow:0 8px 28px rgba(239,35,60,.15)}
+
+      .shadow-soft{box-shadow: 0 20px 60px rgba(0,0,0,.4)}
+      .rounded-2xl{border-radius:18px}
+      .cursor-pointer{cursor:pointer}
+      .hero-bg{background: radial-gradient(800px 400px at 80% -10%, rgba(217,4,41,.25), rgba(11,11,13,0)), linear-gradient(180deg, rgba(239,35,60,.06) 0%, rgba(11,11,13,0) 40%)}
+      .divider{height:1px; width:100%; background:linear-gradient(90deg, rgba(239,35,60,0) 0%, rgba(239,35,60,.4) 50%, rgba(239,35,60,0) 100%)}
+
+      /* Texto */
+      .text-secondary{color:var(--gray-400)!important; font-weight:400}
+      .card-dark p,.card-dark small{color:var(--gray-400)!important}
+
+      /* Títulos (mais contraste) */
+      h1,h2,h3,h5,.fw-bold{color:var(--white)!important; font-weight:700}
+      /* títulos dos cards (etapas) */
+      .card-dark h5{color:#fff!important; font-weight:700; letter-spacing:.2px}
+      .card-dark h5::after{content:''; display:block; width:36px; height:3px; background:var(--red); margin-top:6px; border-radius:2px; opacity:.9}
+
+      /* títulos dos boxes da coluna direita dos benefícios */
+      .feature-title{display:block; font-weight:700; color:#fff; margin-bottom:4px}
+
+      /* Lista com check */
+      .check li{color:var(--white); margin-bottom:10px}
+      .check li::marker{content:"✔ "; color:var(--red)}
+
+      /* KPIs */
+      .hero-kpis .kpi{border:1px solid #1f222a; background:linear-gradient(180deg,#15161b, #101116); border-radius:16px}
+
+      /* CTA flutuante */
+      .floating-cta{position:fixed; bottom:16px; left:0; right:0; z-index:1050}
+      .floating-cta .card{border:1px solid #2a2e39; background:#12131a}
+
+      /* Preço em destaque */
+      .price-tag{font-size:56px; font-weight:900; color:var(--red)!important; text-shadow:0 0 12px rgba(239,35,60,.45)}
+      .price-tag small{font-size:20px; font-weight:700; color:var(--white)!important}
+      .guarantee{
+        background: linear-gradient(180deg, rgba(239,35,60,.14), rgba(239,35,60,.08));
+        border:1px dashed rgba(239,35,60,.9);
+        color:#fff !important;
+        }
+        .guarantee strong{ color:#fff !important; }
+        .guarantee .badge{
+        background: var(--red) !important;
+        font-weight:700;
+        letter-spacing:.2px;
+        }
+        .guarantee .icon{
+        width:22px; height:22px; display:inline-block;
+        filter: drop-shadow(0 2px 6px rgba(239,35,60,.35));
+        }
+
+      /* Accordion/FAQ */
+      .accordion-button{background:#12131a; color:#fff}
+      .accordion-button:not(.collapsed){color:#fff; background:#171821}
+      .accordion-item{border:1px solid #262933; border-radius:12px; overflow:hidden; background:#0f1015}
+
+      /* Responsivo */
+      @media (max-width: 767px){
+        .price-tag{font-size:38px}
+        .navbar-brand span{display:none}
+      }
+
+        /* ---- Visibilidade dos depoimentos ---- */
+        #prova-social .card-dark{
+        background: linear-gradient(180deg,#161821,#101116);
+        border-color:#2d3240;
+        }
+        #prova-social .card-dark:hover{
+        border-color: rgba(239,35,60,.55);
+        box-shadow: 0 14px 40px rgba(239,35,60,.12);
+        }
+
+        /* Nome e função com contraste melhor */
+        #prova-social .card-dark strong{
+        color:#fff !important;           /* nome do aluno */
+        font-weight:700;
+        }
+        #prova-social .card-dark .small{
+        color:#e1e1e1 !important;        /* função/segmento */
+        opacity:.95;
+        }
+
+        /* Texto do depoimento um pouco mais claro */
+        #prova-social .card-dark p{
+        color:#f2f2f2 !important;
+        }
+    </style>
+
+        <!-- ====== SCHEMA: PRODUCT + FAQ + ORG ====== -->
+        <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Product",
+      "name":"Método RedProfit",
+      "image":["https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=1600&auto=format&fit=crop"],
+      "description":"Treinamento de marketing digital focado em aquisição e conversão, com funis prontos e templates.",
+      "brand":{"@type":"Brand","name":"GG Systems"},
+      "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"1372"},
+      "offers":{"@type":"Offer","url":"https://checkout.seudominio.com/redprofit","priceCurrency":"BRL","price":"497.00","availability":"https://schema.org/InStock"}
+    }
+    </script>
+        <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"O curso serve para iniciantes?","acceptedAnswer":{"@type":"Answer","text":"Sim, o método vai do zero ao avançado com passo a passo guiado."}},
+        {"@type":"Question","name":"Terei acesso vitalício?","acceptedAnswer":{"@type":"Answer","text":"Sim, acesso vitalício às aulas e às futuras atualizações."}},
+        {"@type":"Question","name":"Existe garantia?","acceptedAnswer":{"@type":"Answer","text":"7 dias de garantia incondicional. Se não gostar, devolvemos 100%."}}
+      ]
+    }
+    </script>
+        <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"GG Systems","url":"https://www.seudominio.com/","logo":"https://www.seudominio.com/logo.svg"}
+    </script>
+    </head>
+
+    <body class="bg-gradient-red">
+        <!-- ====== NAVBAR ====== -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+            style="background:rgba(11,11,13,.75); backdrop-filter:blur(10px); border-bottom:1px solid #1c1f27">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2"
+                    href="#top" aria-label="Topo">
+                    <span class="d-inline-block rounded-circle"
+                        style="width:12px;height:12px;background:var(--red);"></span>
+                    <strong>Método <span
+                            class="text-red">RedProfit</span></strong>
+                    <span class="ms-2 small text-secondary">by GG Systems</span>
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#nav"
+                    aria-controls="nav" aria-expanded="false"
+                    aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link"
+                                href="#beneficios">Benefícios</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#como-funciona">Como funciona</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#prova-social">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="#preco">Preço</a></li>
+                        <li class="nav-item"><a
+                                class="btn btn-sm btn-red ms-lg-3"
+                                href="#checkout" id="ctaTop">Comprar
+                                agora</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ====== HERO ====== -->
+        <header id="top" class="hero-bg" style="padding-top:104px;">
+            <div class="container py-5">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <span class="badge badge-soft rounded-pill mb-3">Nova
+                            Turma • Vagas Limitadas</span>
+                        <h1 class="display-5 fw-bold lh-sm mb-3">Construa um
+                            <span class="text-red">funil simples</span> que gera
+                            vendas <span class="text-red">todos os
+                                dias</span>.</h1>
+                        <p class="lead text-secondary mb-4">Aprenda a atrair
+                            públicos certos, transformar cliques em leads e
+                            leads em clientes — com páginas, anúncios e
+                            automações já testadas.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a class="btn btn-red btn-lg" href="#checkout"
+                                id="ctaTop2">Quero entrar agora</a>
+                            <a class="btn btn-outline-red btn-lg"
+                                href="#como-funciona">Ver como funciona</a>
+                        </div>
+
+                        <div class="mt-4 hero-kpis">
+                            <div class="row g-3">
+                                <div class="col-6 col-md-4"><div
+                                        class="p-3 kpi text-center"><div
+                                            class="h3 m-0">4.9/5</div><small
+                                            class="text-secondary">Avaliação
+                                            média</small></div></div>
+                                <div class="col-6 col-md-4"><div
+                                        class="p-3 kpi text-center"><div
+                                            class="h3 m-0">+12k</div><small
+                                            class="text-secondary">Alunos
+                                            formados</small></div></div>
+                                <div class="col-12 col-md-4"><div
+                                        class="p-3 kpi text-center"><div
+                                            class="h3 m-0">7 dias</div><small
+                                            class="text-secondary">Garantia
+                                            total</small></div></div>
+                            </div>
+                        </div>
+                        <div class="mt-4 small text-secondary">Sem experiência
+                            prévia • Passo a passo • Templates inclusos</div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div
+                            class="card card-dark shadow-soft rounded-2xl overflow-hidden">
+                            <div class="ratio ratio-16x9 cursor-pointer"
+                                data-bs-toggle="modal"
+                                data-bs-target="#videoModal"
+                                aria-label="Assistir vídeo">
+                                <img
+                                    src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?q=80&w=1200&auto=format&fit=crop"
+                                    class="w-100 h-100 object-fit-cover"
+                                    alt="Apresentação do método"
+                                    loading="lazy" />
+                            </div>
+                            <div
+                                class="p-3 d-flex align-items-center justify-content-between">
+                                <span class="text-secondary">Assista: tour
+                                    rápido (2 min)</span>
+                                <button class="btn btn-sm btn-red"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#videoModal">Play ▶</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="trust-logos d-flex align-items-center gap-4 flex-wrap mt-5">
+                    <span class="text-secondary">Aparecemos em</span>
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/9/95/Forbes_logo.svg"
+                        height="24" alt="Forbes" loading="lazy" />
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Business_Insider_Logo.png"
+                        height="20" alt="Business Insider" loading="lazy" />
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Entrepreneur_Magazine_logo.svg"
+                        height="20" alt="Entrepreneur" loading="lazy" />
+                </div>
+            </div>
+        </header>
+
+        <div class="divider"></div>
+
+        <!-- ====== BENEFÍCIOS ====== -->
+        <section id="beneficios" class="section">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-3">Por que o <span
+                                class="text-red">RedProfit</span> funciona?</h2>
+                        <p class="text-secondary">Sem promessas absurdas. Um
+                            sistema claro para atrair, nutrir e vender — com
+                            foco em métricas que realmente importam.</p>
+                        <ul class="check mt-3">
+                            <li>Modelos de landing pages com <strong>copy
+                                    validada</strong> (como esta).</li>
+                            <li>Tráfego: estratégia para <strong>anúncios e
+                                    orgânico</strong> sem desperdiçar
+                                orçamento.</li>
+                            <li>Automação simples para <strong>nutrir
+                                    leads</strong> e gerar vendas no
+                                automático.</li>
+                            <li>Checklists e <strong>roteiros prontos</strong>
+                                para anunciar no mesmo dia.</li>
+                        </ul>
+                        <div class="mt-4 d-flex gap-2">
+                            <a class="btn btn-red" href="#checkout">Quero
+                                começar</a>
+                            <a class="btn btn-outline-red" href="#faq">Tirar
+                                dúvidas</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card card-dark p-4 outline">
+                            <h5 class="mb-3">Você vai aprender a:</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 outline h-100">
+                                        <span class="feature-title">Captar
+                                            Leads</span>
+                                        <p class="text-secondary small m-0">Crie
+                                            iscas digitais e formulários que
+                                            convertem 20%+.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 outline h-100">
+                                        <span
+                                            class="feature-title">Converter</span>
+                                        <p
+                                            class="text-secondary small m-0">Sequências
+                                            de e-mail e WhatsApp
+                                            persuasivas.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 outline h-100">
+                                        <span
+                                            class="feature-title">Escalar</span>
+                                        <p
+                                            class="text-secondary small m-0">Anúncios
+                                            lucrativos e métricas para
+                                            otimização.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 outline h-100">
+                                        <span
+                                            class="feature-title">Fidelizar</span>
+                                        <p
+                                            class="text-secondary small m-0">Pós-venda
+                                            que transforma clientes em
+                                            promotores.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /col -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== COMO FUNCIONA ====== -->
+        <section id="como-funciona" class="section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="badge badge-soft rounded-pill">Passo a
+                        passo</span>
+                    <h2 class="fw-bold mt-2">Do 0 ao lucro em 3 etapas</h2>
+                    <p class="text-secondary">Plano direto ao ponto para ativar
+                        seu funil esta semana.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card card-dark p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <span class="badge bg-danger">1</span>
+                                <h5 class="m-0">Base & Oferta</h5>
+                            </div>
+                            <p class="text-secondary">Definição de persona,
+                                promessa clara, prova e CTA. Templates de
+                                páginas e scripts de vídeo.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-dark p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <span class="badge bg-danger">2</span>
+                                <h5 class="m-0">Tráfego & Leads</h5>
+                            </div>
+                            <p class="text-secondary">Anúncios de alta intenção
+                                e conteúdo orgânico. Captação por LP, WhatsApp e
+                                e-mail.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-dark p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <span class="badge bg-danger">3</span>
+                                <h5 class="m-0">Conversão & Escala</h5>
+                            </div>
+                            <p class="text-secondary">Follow-up automatizado,
+                                oferta por tempo limitado e otimização por
+                                métricas reais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ====== PROVA SOCIAL ====== -->
+        <section id="prova-social" class="section">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5">
+                        <h2 class="fw-bold mb-3">Resultados que falam por
+                            si.</h2>
+                        <p class="text-secondary">Depoimentos verificados nos
+                            últimos 90 dias.</p>
+                        <ul class="check">
+                            <li>Aumento médio de <strong>3,2x</strong> no ROI de
+                                campanhas.</li>
+                            <li>LPs batendo <strong>22%+</strong> de conversão
+                                em leads.</li>
+                            <li>Recuperação de boletos com sequência
+                                automatizada.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card card-dark p-3 h-100">
+                                    <div
+                                        class="d-flex align-items-center gap-2 mb-2">
+                                        <img
+                                            src="https://i.pravatar.cc/80?img=12"
+                                            width="40" height="40"
+                                            class="rounded-circle" alt="Aluno"
+                                            loading="lazy" />
+                                        <div>
+                                            <strong>Marina S.</strong>
+                                            <div
+                                                class="small text-secondary">E-commerce
+                                                de Moda</div>
+                                        </div>
+                                    </div>
+                                    <p class="m-0">“Primeiro mês: 187 leads, 64
+                                        vendas. A copy e a sequência de WhatsApp
+                                        fizeram toda diferença.”</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card card-dark p-3 h-100">
+                                    <div
+                                        class="d-flex align-items-center gap-2 mb-2">
+                                        <img
+                                            src="https://i.pravatar.cc/80?img=22"
+                                            width="40" height="40"
+                                            class="rounded-circle" alt="Aluno"
+                                            loading="lazy" />
+                                        <div>
+                                            <strong>Lucas R.</strong>
+                                            <div
+                                                class="small text-secondary">Infoprodutos
+                                                Fitness</div>
+                                        </div>
+                                    </div>
+                                    <p class="m-0">“Dobrei o faturamento em 45
+                                        dias usando só as páginas e o roteiro de
+                                        anúncios.”</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card card-dark p-3 h-100">
+                                    <div
+                                        class="d-flex align-items-center gap-2 mb-2">
+                                        <img
+                                            src="https://i.pravatar.cc/80?img=36"
+                                            width="40" height="40"
+                                            class="rounded-circle" alt="Aluno"
+                                            loading="lazy" />
+                                        <div>
+                                            <strong>Ana P.</strong>
+                                            <div
+                                                class="small text-secondary">Consultoria</div>
+                                        </div>
+                                    </div>
+                                    <p class="m-0">“O módulo de oferta
+                                        irresistível mudou o jogo. Hoje tenho
+                                        previsibilidade de vendas.”</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card card-dark p-3 h-100">
+                                    <div
+                                        class="d-flex align-items-center gap-2 mb-2">
+                                        <img
+                                            src="https://i.pravatar.cc/80?img=5"
+                                            width="40" height="40"
+                                            class="rounded-circle" alt="Aluno"
+                                            loading="lazy" />
+                                        <div>
+                                            <strong>Diego C.</strong>
+                                            <div
+                                                class="small text-secondary">Agência
+                                                Local</div>
+                                        </div>
+                                    </div>
+                                    <p class="m-0">“Consegui 5 clientes
+                                        recorrentes usando a prospecção de
+                                        conteúdo explicada no curso.”</p>
+                                </div>
+                            </div>
+                        </div><!-- /row -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== OFERTA / PREÇO ====== -->
+        <section id="preco" class="section">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <span class="badge badge-soft rounded-pill">Inscrição
+                        aberta</span>
+                    <h2 class="fw-bold mt-2">Entre hoje e comece a vender em
+                        dias</h2>
+                    <p class="text-secondary">Tudo que você precisa para lançar
+                        e escalar sua oferta.</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card card-dark p-4 p-md-5 shadow-soft">
+                            <div class="row align-items-center g-4">
+                                <div class="col-md-7">
+                                    <h3 class="mb-1">Método RedProfit <span
+                                            class="badge bg-danger ms-1">Completo</span></h3>
+                                    <div class="text-secondary mb-3">Acesso
+                                        vitalício + atualizações +
+                                        comunidade</div>
+                                    <ul class="check">
+                                        <li>LPs e copies prontas (arraste e
+                                            use).</li>
+                                        <li>Roteiro de anúncios e criativos de
+                                            alta conversão.</li>
+                                        <li>Funil simples: lead → oferta →
+                                            follow-up.</li>
+                                        <li>Planilhas de metas e ROI +
+                                            checklists semanais.</li>
+                                        <li>Bônus: 20 modelos de e-mail/WhatsApp
+                                            prontos.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 text-center text-md-end">
+                                    <div class="price-tag">R$ <span
+                                            id="price">497</span><small
+                                            class="fs-6">,00</small></div>
+                                    <div class="text-secondary">ou 12x de R$
+                                        49,70</div>
+                                    <div class="mt-3 d-grid gap-2">
+                                        <a class="btn btn-red btn-lg"
+                                            href="https://checkout.seudominio.com/redprofit"
+                                            id="ctaPrice">Comprar agora</a>
+                                        <small class="text-secondary">Garantia
+                                            incondicional de 7 dias</small>
+                                        <img
+                                            src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/br.svg"
+                                            width="26" alt="BR"
+                                            loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-3 guarantee rounded-2xl">
+                                <strong>Garantia 7 Dias:</strong> não gostou,
+                                devolvemos 100% sem perguntas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- ====== FAQ ====== -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <h2 class="fw-bold mb-3">Dúvidas frequentes</h2>
+                        <p class="text-secondary">Tudo para você comprar com
+                            <strong>zero dúvidas</strong>. Se faltar algo, fale
+                            no WhatsApp.</p>
+                        <a class="btn btn-outline-red"
+                            href="https://wa.me/5500000000000" target="_blank"
+                            rel="noopener">Falar com um especialista</a>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="accordion" id="faqAcc">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q1">
+                                    <button class="accordion-button"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#a1"
+                                        aria-expanded="true"
+                                        aria-controls="a1">O curso serve para
+                                        iniciantes?</button>
+                                </h2>
+                                <div id="a1"
+                                    class="accordion-collapse collapse show"
+                                    aria-labelledby="q1"
+                                    data-bs-parent="#faqAcc">
+                                    <div
+                                        class="accordion-body text-secondary">Sim,
+                                        começamos do zero e avançamos até
+                                        tráfego e escala.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q2">
+                                    <button class="accordion-button collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#a2"
+                                        aria-expanded="false"
+                                        aria-controls="a2">Qual suporte
+                                        terei?</button>
+                                </h2>
+                                <div id="a2" class="accordion-collapse collapse"
+                                    aria-labelledby="q2"
+                                    data-bs-parent="#faqAcc">
+                                    <div
+                                        class="accordion-body text-secondary">Suporte
+                                        via comunidade e sessões ao vivo de
+                                        dúvidas quinzenais.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q3">
+                                    <button class="accordion-button collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#a3"
+                                        aria-expanded="false"
+                                        aria-controls="a3">Existe
+                                        garantia?</button>
+                                </h2>
+                                <div id="a3" class="accordion-collapse collapse"
+                                    aria-labelledby="q3"
+                                    data-bs-parent="#faqAcc">
+                                    <div
+                                        class="accordion-body text-secondary">Sim,
+                                        7 dias para testar. Se não fizer
+                                        sentido, devolvemos 100%.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q4">
+                                    <button class="accordion-button collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#a4"
+                                        aria-expanded="false"
+                                        aria-controls="a4">Por quanto tempo
+                                        tenho acesso?</button>
+                                </h2>
+                                <div id="a4" class="accordion-collapse collapse"
+                                    aria-labelledby="q4"
+                                    data-bs-parent="#faqAcc">
+                                    <div
+                                        class="accordion-body text-secondary">Acesso
+                                        vitalício às aulas e futuras
+                                        atualizações.</div>
+                                </div>
+                            </div>
+                        </div><!-- /accordion -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CHECKOUT ANCHOR ====== -->
+        <section id="checkout" class="section py-5">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-3">Pronto para entrar?</h2>
+                <p class="text-secondary mb-4">Clique para finalizar sua
+                    inscrição com segurança.</p>
+                <a class="btn btn-red btn-lg"
+                    href="https://checkout.seudominio.com/redprofit"
+                    id="ctaBottom">Ir para o checkout</a>
+                <div class="mt-3 small text-secondary">Pagamento seguro —
+                    cartão, Pix e boleto</div>
+            </div>
+        </section>
+
+        <!-- ====== FOOTER ====== -->
+        <footer class="py-5"
+            style="background:#0a0b0f; border-top:1px solid #1a1d26">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="d-inline-block rounded-circle"
+                                style="width:10px;height:10px;background:var(--red);"></span>
+                            <strong>Método <span
+                                    class="text-red">RedProfit</span></strong>
+                        </div>
+                        <div class="text-secondary small">© <span
+                                id="year"></span> GG Systems. Todos os direitos
+                            reservados. CNPJ 00.000.000/0000-00</div>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#faq" class="link-light me-3">FAQ</a>
+                        <a href="#" class="link-light me-3">Termos</a>
+                        <a href="#" class="link-light">Privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ====== FLOATING CTA (MOBILE) ====== -->
+        <div class="floating-cta d-md-none">
+            <div class="container">
+                <div class="card p-2 shadow-soft align-items-center">
+                    <div
+                        class="d-flex justify-content-between align-items-center w-100">
+                        <div class="d-flex flex-column">
+                            <strong>Entrar no RedProfit</strong>
+                            <small class="text-secondary">7 dias de
+                                garantia</small>
+                        </div>
+                        <a class="btn btn-red"
+                            href="https://checkout.seudominio.com/redprofit">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== VIDEO MODAL ====== -->
+        <div class="modal fade" id="videoModal" tabindex="-1"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content"
+                    style="background:#0f1015; border:1px solid #242835">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title">Tour rápido</h5>
+                        <button type="button" class="btn-close btn-close-white"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body pt-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe id="videoFrame" src title="YouTube video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== SCRIPTS ====== -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script>
+      // ====== UTIL ======
+      const $  = (q)=>document.querySelector(q);
+      const $$ = (q)=>document.querySelectorAll(q);
+
+      // Current year in footer
+      $('#year').textContent = new Date().getFullYear();
+
+      // Smooth scroll with offset for fixed navbar
+      $$('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const id = a.getAttribute('href');
+          if(!id || id==='#') return;
+          const el = document.querySelector(id);
+          if(!el) return;
+          e.preventDefault();
+          const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+          window.scrollTo({top:y, behavior:'smooth'});
+        });
+      });
+
+      // Basic tracking for CTAs
+      function track(label){ console.info('[RedProfit][CTA]', label, new Date().toISOString()); }
+      ['ctaTop','ctaTop2','ctaPrice','ctaBottom'].forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) el.addEventListener('click', ()=>track(id));
+      });
+
+      // Exit-intent: leva o usuário até o preço (desktop)
+      let exitShown = false;
+      document.addEventListener('mouseleave', ()=>{
+        if(exitShown || window.innerWidth < 992) return;
+        exitShown = true;
+        document.getElementById('preco').scrollIntoView({behavior:'smooth'});
+      });
+
+      // YouTube lazy load (troque o ID)
+      const videoId = 'dQw4w9WgXcQ';
+      const videoModal = document.getElementById('videoModal');
+      videoModal.addEventListener('show.bs.modal', ()=>{
+        document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      });
+      videoModal.addEventListener('hidden.bs.modal', ()=>{
+        document.getElementById('videoFrame').src = '';
+      });
+
+      console.log('SEO/Schema carregado');
+    </script>
+    </body>
+</html>
