@@ -1,37 +1,34 @@
-<!-- components/ProjectCard.vue -->
+<!-- app/components/ProjectCard.vue -->
 <script setup lang="ts">
 import type { Project } from '~/data/projects'
-const props = defineProps<{ project: Project }>()
+defineProps<{ project: Project }>()
 </script>
 
 <template>
-    <div
-        class="group rounded-xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:border-purple-500/50 transition">
-        <div class="aspect-[16/9] bg-zinc-900 relative">
-            <img :src="project.cover" :alt="project.title" class="w-full h-full object-cover"
-                @error="(e: any) => { e.target.style.display = 'none' }" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+    <article
+        class="group rounded-xl border border-[color:var(--line)] bg-[color:var(--card)] overflow-hidden shadow-sm hover:shadow-md transition">
+        <div class="aspect-[16/9] bg-black/5">
+            <img :src="project.cover" :alt="project.title" class="w-full h-full object-cover" loading="lazy" />
         </div>
 
-        <div class="p-4">
-            <h3 class="font-semibold text-lg">{{ project.title }}</h3>
-            <p class="text-zinc-400 text-sm mt-1">{{ project.description }}</p>
+        <div class="p-5">
+            <h3 class="font-semibold text-lg leading-tight">{{ project.title }}</h3>
+            <p class="text-[color:var(--muted)] text-sm mt-1 line-clamp-2">{{ project.description }}</p>
 
             <div class="flex flex-wrap gap-2 mt-3">
                 <span v-for="t in project.tags" :key="t"
-                    class="text-xs px-2 py-1 rounded-full border border-[color:var(--border)] text-zinc-300">
+                    class="text-[11px] px-2 py-0.5 rounded-full border border-[color:var(--line)] text-[color:var(--muted)]">
                     {{ t }}
                 </span>
             </div>
 
             <div class="flex gap-2 mt-4">
-                <a :href="project.demoPath" target="_blank"
-                    class="px-3 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-sm">Ver demo</a>
+                <a :href="project.demoPath" target="_blank" class="btn-primary">Ver demo</a>
                 <NuxtLink :to="`/projetos/${project.slug}`"
-                    class="px-3 py-2 rounded-lg border border-[color:var(--border)] hover:border-purple-500/50 text-sm">
+                    class="px-3.5 py-2 rounded-lg border border-[color:var(--line)] hover:bg-black/5 text-sm">
                     Prévia
                 </NuxtLink>
             </div>
         </div>
-    </div>
+    </article>
 </template>

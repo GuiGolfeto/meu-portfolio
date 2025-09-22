@@ -1,204 +1,135 @@
-<!-- pages/index.vue -->
+<!-- app/pages/index.vue -->
 <script setup lang="ts">
 import { computed } from 'vue'
 import { projects } from '~/data/projects'
-import {
-    hero, services, metrics, stack, testimonials, clients, process, faqs, profile
-} from '~/data/site'
-
-const isTwoByTwo = computed(() => projects.length === 4)
+import { hero, profile } from '~/data/site'
 
 const waLink = computed(() => {
     const num = (profile as any)?.whatsapp
     const first = ((profile as any)?.name || 'Olá').split(' ')[0]
     return num ? `https://wa.me/${num}?text=Oi%20${encodeURIComponent(first)}%2C%20quero%20um%20or%C3%A7amento` : null
 })
+const featured = computed(() => projects.slice(0, 6))
 </script>
 
 <template>
-    <section class="space-y-12">
+    <!-- HERO editorial: título grande + foto pequena/identidade -->
+    <section class="rounded-2xl border border-[color:var(--line)] bg-[color:var(--card)] p-8 md:p-12">
+        <div class="grid md:grid-cols-[1.2fr_.8fr] gap-10 items-start">
+            <div>
+                <h1 class="text-[40px] md:text-[56px] leading-[1.03] font-extrabold tracking-tight">
+                    {{ hero.title }}
+                </h1>
+                <p class="mt-4 text-[color:var(--muted)] text-[15px] max-w-2xl">
+                    Design direto ao ponto, atenção aos detalhes e código enxuto. Eu cuido de performance e SEO; você
+                    foca no negócio.
+                </p>
 
-        <!-- HERO com foto + WhatsApp -->
-        <div class="rounded-2xl p-6 md:p-8 border border-zinc-800 bg-gradient-to-b from-purple-600/10 to-transparent">
-            <div class="grid md:grid-cols-[1.2fr_.8fr] items-center gap-6">
-                <!-- Texto -->
-                <div>
-                    <h1 class="text-3xl md:text-4xl font-extrabold leading-tight">
-                        {{ hero.title }}
-                    </h1>
-
-                    <div class="flex items-center gap-2 mt-2 text-zinc-400 flex-wrap">
-                        <span v-for="t in hero.subtitle.split(' • ')" :key="t"
-                            class="text-xs md:text-sm px-2 py-1 rounded-full border border-zinc-800">
-                            {{ t }}
-                        </span>
-                    </div>
-
-                    <div class="flex flex-wrap gap-3 mt-5">
-                        <a v-if="waLink" :href="waLink" target="_blank"
-                            class="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white">
-                            Falar no WhatsApp
-                        </a>
-                        <NuxtLink :to="hero.ctas.secondaryHref"
-                            class="px-4 py-2 rounded-lg border border-zinc-800 hover:border-purple-500/50">
-                            {{ hero.ctas.secondaryText }}
-                        </NuxtLink>
-                    </div>
-
-                    <!-- Métricas em badges -->
-                    <div class="flex flex-wrap gap-3 mt-6">
-                        <div v-for="m in metrics" :key="m.label"
-                            class="px-3 py-2 rounded-lg border border-zinc-800 bg-[#111118]">
-                            <span class="font-bold">{{ m.kpi }}</span>
-                            <span class="text-zinc-400 text-sm"> {{ m.label }}</span>
-                        </div>
-                    </div>
+                <div class="mt-6 flex flex-wrap gap-2 text-[13px]">
+                    <span class="px-3 py-1.5 rounded-full border border-[color:var(--line)]">+10 projetos</span>
+                    <span class="px-3 py-1.5 rounded-full border border-[color:var(--line)]">95+ Lighthouse</span>
+                    <span class="px-3 py-1.5 rounded-full border border-[color:var(--line)]">Prazo fechado</span>
                 </div>
 
+                <div class="mt-8 flex gap-3">
+                    <a v-if="waLink" :href="waLink" target="_blank" class="btn-primary">Pedir orçamento</a>
+                    <NuxtLink to="#portfolio"
+                        class="px-3.5 py-2 rounded-lg border border-[color:var(--line)] hover:bg-black/5 text-sm">
+                        Ver portfólio
+                    </NuxtLink>
+                </div>
+            </div>
+
+            <aside
+                class="flex flex-col items-center text-center p-6 rounded-xl border border-[color:var(--line)] bg-[color:var(--card)] shadow-sm">
                 <!-- Foto -->
-                <div class="justify-self-end w-full max-w-[260px]">
-                    <div class="relative">
-                        <img :src="(profile as any)?.avatar || '/placeholder-avatar.png'"
-                            :alt="(profile as any)?.name || 'Foto'"
-                            class="w-full aspect-square object-cover rounded-2xl border border-zinc-800" />
-                        <div class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-purple-500/30"></div>
-                    </div>
-                    <div class="mt-3">
-                        <div class="font-semibold leading-tight">{{ (profile as any)?.name || 'Seu nome' }}</div>
-                        <div class="text-zinc-400 text-sm">{{ (profile as any)?.role || 'Sua função' }}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <img :src="(profile as any)?.avatar || '/me.png'" :alt="(profile as any)?.name || 'Foto'"
+                    class="h-32 w-32 rounded-full object-cover border border-[color:var(--line)] mb-4" />
 
-        <!-- SERVIÇOS: grid estável -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-            <div v-for="(s, i) in services" :key="s.title"
-                class="rounded-xl p-4 border border-zinc-800 bg-[#111118] hover:border-purple-500/40 transition">
-                <div class="flex items-center gap-3">
-                    <div
-                        class="h-9 w-9 rounded-lg bg-purple-600/20 border border-purple-600/30 grid place-items-center">
-                        <span class="text-purple-300 text-sm">{{ i + 1 }}</span>
-                    </div>
-                    <div>
-                        <div class="font-semibold">{{ s.title }}</div>
-                        <div class="text-zinc-400 text-xs mt-0.5">{{ s.desc }}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CLIENTES / STACK: sem animação, com wrap e alinhamento -->
-        <div class="rounded-xl border border-zinc-800 overflow-hidden bg-[#101015]">
-            <div class="marquee-row px-6 py-3">
-                <span v-for="c in clients.concat(stack)" :key="c"
-                    class="px-3 py-1 rounded-full border border-zinc-800/80 text-zinc-300 text-sm">
-                    {{ c }}
-                </span>
-            </div>
-        </div>
-
-        <!-- PROJETOS: 2×2 quando tiver 4 itens -->
-        <div id="portfolio">
-            <div class="flex items-end justify-between mb-4">
-                <h2 class="text-2xl font-bold">Projetos</h2>
-                <a :href="waLink || '#contato'" target="_blank" class="text-sm text-zinc-400 hover:text-white">Quer algo
-                    assim? →</a>
-            </div>
-
-            <div :class="[
-                'grid gap-5',
-                isTwoByTwo ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
-            ]">
-                <ProjectCard v-for="p in projects" :key="p.slug" :project="p" />
-            </div>
-        </div>
-
-        <!-- DEPOIMENTOS: lista/scroll no mobile, grade no desktop -->
-        <div class="rounded-xl border border-zinc-800 overflow-hidden">
-            <div
-                class="flex gap-4 p-4 no-scrollbar overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-4 md:overflow-visible">
-                <div v-for="t in testimonials" :key="t.name"
-                    class="min-w-[260px] md:min-w-0 md:w-auto snap-start rounded-lg p-4 border border-zinc-800 bg-[#111118]">
-                    <p class="text-zinc-300 text-sm">“{{ t.text }}”</p>
-                    <div class="text-zinc-500 text-xs mt-2">{{ t.name }} • {{ t.role }}</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROCESSO — versão nova -->
-        <section aria-labelledby="processo">
-            <h2 id="processo" class="text-2xl font-bold mb-4">Como trabalho</h2>
-
-            <!-- Desktop: stepper horizontal -->
-            <div class="hidden md:block rounded-2xl border border-zinc-800 p-6 bg-[#0f0f16]">
-                <!-- Linha de conexão -->
-                <div class="relative h-10 mb-6">
-                    <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-zinc-800"></div>
-
-                    <div class="grid grid-cols-5">
-                        <div v-for="(p, i) in process" :key="p.step" class="relative">
-                            <!-- Ponto numerado -->
-                            <div class="mx-auto h-10 w-10 rounded-full grid place-items-center
-                      bg-gradient-to-b from-purple-600/25 to-purple-600/10
-                      border border-purple-500/30 text-purple-200 font-semibold">
-                                {{ i + 1 }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Títulos/descrições alinhados -->
-                <div class="grid grid-cols-5 gap-6">
-                    <div v-for="(p, i) in process" :key="p.step" class="text-center">
-                        <div class="font-semibold">{{ p.step }}</div>
-                        <div class="text-zinc-400 text-sm mt-1">{{ p.text }}</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile: lista vertical compacta -->
-            <div class="md:hidden rounded-2xl border border-zinc-800 p-4 bg-[#0f0f16]">
-                <ul class="space-y-4">
-                    <li v-for="(p, i) in process" :key="p.step" class="flex items-start gap-3">
-                        <div class="h-9 w-9 flex-shrink-0 rounded-full grid place-items-center
-                    bg-gradient-to-b from-purple-600/25 to-purple-600/10
-                    border border-purple-500/30 text-purple-200 font-semibold">
-                            {{ i + 1 }}
-                        </div>
-                        <div class="flex-1">
-                            <div class="font-semibold leading-5">{{ p.step }}</div>
-                            <div class="text-zinc-400 text-sm leading-5">{{ p.text }}</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- FAQ: uma coluna no mobile, 3 no desktop -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <details v-for="f in faqs" :key="f.q" class="rounded-lg border border-zinc-800 bg-[#111118] p-3">
-                <summary class="cursor-pointer font-semibold text-sm">{{ f.q }}</summary>
-                <p class="text-zinc-400 text-sm mt-2">{{ f.a }}</p>
-            </details>
-        </div>
-
-        <!-- CTA -->
-        <div id="contato"
-            class="rounded-2xl p-6 border border-zinc-800 bg-gradient-to-r from-purple-600/15 via-purple-600/5 to-transparent">
-            <div class="flex flex-wrap items-center justify-between gap-3">
+                <!-- Nome e cargo -->
                 <div>
-                    <h3 class="text-xl font-bold">Bora lançar sua próxima página?</h3>
-                    <p class="text-zinc-400 text-sm">Resposta rápida e prazos claros.</p>
+                    <div class="text-xl font-semibold">{{ (profile as any)?.name }}</div>
+                    <div class="text-[color:var(--muted)] text-sm">{{ (profile as any)?.role }}</div>
                 </div>
-                <div class="flex gap-2">
-                    <a v-if="waLink" :href="waLink" target="_blank"
-                        class="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white">WhatsApp</a>
-                    <a href="mailto:contato@exemplo.com"
-                        class="px-4 py-2 rounded-lg border border-zinc-800 hover:border-purple-500/50">E-mail</a>
-                </div>
+
+                <!-- Divisor -->
+                <div class="w-12 h-px bg-[color:var(--line)] my-4"></div>
+
+                <!-- Descrição -->
+                <p class="text-[color:var(--muted)] text-[15px] leading-snug max-w-xs">
+                    Trabalho com Nuxt/Vue, Tailwind e integrações de marketing
+                    para sites que precisam converter.
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- divisor simples -->
+    <div class="h-px bg-[color:var(--line)] my-12"></div>
+
+    <!-- SOBRE (curto, para dar “voz” autoral) -->
+    <section id="sobre" class="grid md:grid-cols-2 gap-8">
+        <div>
+            <h2 class="text-2xl font-bold tracking-tight">O que eu faço</h2>
+            <p class="text-[color:var(--muted)] mt-2">
+                Landing pages e sites institucionais com foco em <span
+                    class="font-medium text-[color:var(--fg)]">conversão</span>.
+                Eu prototipo rápido, valido a estrutura e entrego código limpo, acessível e mensurável.
+            </p>
+        </div>
+        <ul class="grid sm:grid-cols-2 gap-3">
+            <li class="rounded-xl border border-[color:var(--line)] bg-[color:var(--card)] p-4">
+                <div class="font-semibold">Landing Pages</div>
+                <p class="text-[color:var(--muted)] text-sm mt-1">Copy, hierarquia e CTA com foco em resultado.</p>
+            </li>
+            <li class="rounded-xl border border-[color:var(--line)] bg-[color:var(--card)] p-4">
+                <div class="font-semibold">Sites institucionais</div>
+                <p class="text-[color:var(--muted)] text-sm mt-1">Arquitetura clara, CMS opcional e SEO on-page.</p>
+            </li>
+            <li class="rounded-xl border border-[color:var(--line)] bg-[color:var(--card)] p-4">
+                <div class="font-semibold">Performance & SEO</div>
+                <p class="text-[color:var(--muted)] text-sm mt-1">Boas práticas Lighthouse e schema básico.</p>
+            </li>
+            <li class="rounded-xl border border-[color:var(--line)] bg-[color:var(--card)] p-4">
+                <div class="font-semibold">Manutenção</div>
+                <p class="text-[color:var(--muted)] text-sm mt-1">Ajustes, testes A/B e integrações (GA4, RD, HubSpot).
+                </p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- divisor -->
+    <div class="h-px bg-[color:var(--line)] my-12"></div>
+
+    <!-- PROJETOS -->
+    <section id="portfolio">
+        <div class="flex items-end justify-between mb-5">
+            <h2 class="text-2xl font-bold tracking-tight">Projetos</h2>
+            <a :href="waLink || '#contato'" target="_blank"
+                class="text-sm text-[color:var(--muted)] hover:text-[color:var(--fg)]">Quer algo assim? →</a>
+        </div>
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <ProjectCard v-for="p in featured" :key="p.slug" :project="p" />
+        </div>
+    </section>
+
+    <!-- divisor -->
+    <div class="h-px bg-[color:var(--line)] my-12"></div>
+
+    <!-- CTA final -->
+    <section id="contato" class="rounded-2xl border border-[color:var(--line)] bg-[color:var(--card)] p-6 md:p-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+                <h3 class="text-xl font-bold tracking-tight">Pronto para começar?</h3>
+                <p class="text-[color:var(--muted)] text-sm mt-1">Envie sua ideia e receba um escopo fechado hoje.</p>
+            </div>
+            <div class="flex gap-2">
+                <a v-if="waLink" :href="waLink" target="_blank" class="btn-primary">Pedir orçamento</a>
+                <a href="mailto:contato@exemplo.com?subject=Orçamento%20Landing%20Page"
+                    class="px-3.5 py-2 rounded-lg border border-[color:var(--line)] hover:bg-black/5 text-sm">
+                    Enviar por e-mail
+                </a>
             </div>
         </div>
-
     </section>
 </template>
