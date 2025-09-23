@@ -10,10 +10,10 @@ const waLink = computed(() => {
 })
 
 useHead({
-  titleTemplate: (t) => (t ? `${t} · ${profile.name}` : `${profile.name} · Portfólio`),
+  titleTemplate: (t) => (t ? `${t} · WebSpark Creative` : `WebSpark Creative · Agência Digital`),
   meta: [
-    { name: 'description', content: 'Landing pages e sites minimalistas, com foco em conversão e performance.' },
-    { name: 'theme-color', content: '#FAFAFA' }
+    { name: 'description', content: 'WebSpark Creative - Agência digital especializada em landing pages, sites e e-commerce que convertem. Performance, SEO e design profissional.' },
+    { name: 'theme-color', content: '#3B82F6' }
   ],
   link: [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

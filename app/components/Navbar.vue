@@ -3,14 +3,7 @@
     <div class="container mx-auto px-6">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <div class="flex items-center space-x-3">
-          <img :src="profile.avatar" :alt="profile.name" 
-               class="h-8 w-8 rounded-full object-cover" />
-          <div>
-            <h1 class="text-xl font-bold text-gray-900">WebSpark Creative</h1>
-            <p class="text-xs text-gray-500">{{ profile.role }}</p>
-          </div>
-        </div>
+        <Logo :size="32" :show-text="true" :show-subtitle="false" />
 
         <!-- Navigation Links -->
         <div class="hidden md:flex items-center space-x-8">

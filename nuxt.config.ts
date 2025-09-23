@@ -2,13 +2,14 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Portfólio — Guilherme',
+      title: 'WebSpark Creative — Agência Digital',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Portfólio com projetos em HTML, CSS e JS' },
-        { name: 'theme-color', content: '#0b0b10' }
+        { name: 'description', content: 'WebSpark Creative - Agência digital especializada em landing pages, sites e e-commerce que convertem. Performance, SEO e design profissional.' },
+        { name: 'theme-color', content: '#3B82F6' }
       ],
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap' }
