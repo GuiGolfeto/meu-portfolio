@@ -1,7 +1,7 @@
 // data/site.ts (refinado)
 export const profile = {
     name: 'Guilherme Golfeto',
-    role: 'Front-end Developer',
+    role: 'Desenvolvedor & Fundador',
     avatar: '/me.png',
     // formato: DDI+DDD+NÚMERO (sem espaços)
     whatsapp: '5518991065626'
@@ -19,10 +19,10 @@ export const hero = {
 }
 
 export const services = [
-    { title: 'Landing Pages', desc: 'Foco total em conversão' },
-    { title: 'Sites', desc: 'Institucionais e catálogos' },
-    { title: 'SEO', desc: 'On-page + boas práticas' },
-    { title: 'Manutenção', desc: 'Suporte e melhorias' }
+    { title: 'Landing Pages', desc: 'Páginas otimizadas para conversão máxima' },
+    { title: 'Sites Institucionais', desc: 'Presença digital profissional e moderna' },
+    { title: 'E-commerce', desc: 'Lojas online que vendem mais' },
+    { title: 'SEO & Performance', desc: 'Visibilidade e velocidade otimizadas' }
 ]
 
 export const metrics = [
