@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { profile } from '~/data/site'
+import { Analytics } from '@vercel/analytics/nuxt'
 
 const waLink = computed(() => {
   const num = (profile as any)?.whatsapp
