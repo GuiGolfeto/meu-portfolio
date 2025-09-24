@@ -25,6 +25,7 @@ useHead({
 </script>
 
 <template>
+  <Analytics/>
   <div class="min-h-screen antialiased">
     <!-- Navigation -->
     <Navbar />
