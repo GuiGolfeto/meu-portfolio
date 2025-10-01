@@ -1,17 +1,27 @@
-<!-- components/SpotlightCard.client.vue -->
 <script setup lang="ts">
-import { ref } from 'vue'
-const x = ref(-999), y = ref(-999)
-const move = (e: MouseEvent) => { const r = (e.currentTarget as HTMLElement).getBoundingClientRect()
-  x.value = e.clientX - r.left; y.value = e.clientY - r.top }
-const leave = () => { x.value = -999; y.value = -999 }
+import { services } from '~/data/site'
 </script>
 
 <template>
-  <div class="relative rounded-xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden"
-       @mousemove="move" @mouseleave="leave">
-    <div class="pointer-events-none absolute inset-0"
-         :style="{ background: `radial-gradient(200px 200px at ${x}px ${y}px, rgba(168,85,247,.2), transparent 60%)` }"></div>
-    <slot />
-  </div>
+  <section id="servicos" class="relative bg-gradient-to-b from-[#0B0B0F] to-[#101018] py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white">Nossos Serviços</h2>
+      <p class="mt-2 text-white/70 max-w-2xl">Tudo que você precisa: do site ao aplicativo, com SEO e performance.</p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <a v-for="s in services" :key="s.title" :href="s.href"
+           class="group rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur hover:border-violet-400/50 transition">
+          <div class="text-2xl">{{ s.icon }}</div>
+          <h3 class="mt-3 text-lg font-semibold text-white">{{ s.title }}</h3>
+          <p class="mt-1 text-sm text-white/70">{{ s.desc }}</p>
+          <span class="mt-3 inline-flex items-center gap-1 text-violet-300">
+            Saiba mais
+            <svg class="h-4 w-4 transition -translate-x-0 group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
 </template>

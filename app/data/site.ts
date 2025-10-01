@@ -19,10 +19,30 @@ export const hero = {
 }
 
 export const services = [
-    { title: 'Landing Pages', desc: 'Páginas otimizadas para conversão máxima' },
-    { title: 'Sites Institucionais', desc: 'Presença digital profissional e moderna' },
-    { title: 'E-commerce', desc: 'Lojas online que vendem mais' },
-    { title: 'SEO & Performance', desc: 'Visibilidade e velocidade otimizadas' }
+    {
+        icon: "💥",
+        title: "Landing Pages de Conversão",
+        desc: "Feitas para capturar leads e vender mais.",
+        href: "#contato"
+    },
+    {
+        icon: "🧭",
+        title: "Sites Profissionais",
+        desc: "Presença digital moderna e responsiva.",
+        href: "#contato"
+    },
+    {
+        icon: "📱",
+        title: "Apps Mobile & Sistemas",
+        desc: "iOS/Android, dashboards, APIs e integrações.",
+        href: "#contato"
+    },
+    {
+        icon: "⚡",
+        title: "SEO & Performance",
+        desc: "Velocidade 95+ e melhores posições no Google.",
+        href: "#contato"
+    }
 ]
 
 export const metrics = [
