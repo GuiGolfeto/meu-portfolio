@@ -25,11 +25,15 @@ useHead({
 </script>
 
 <template>
-  <Analytics/>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=700882859115530&ev=PageView&noscript=1" />
+  </noscript>
+  <Analytics />
   <div class="min-h-screen antialiased">
     <!-- Navigation -->
     <Navbar />
-    
+
     <!-- Main Content -->
     <main>
       <NuxtPage />
@@ -38,8 +42,9 @@ useHead({
 </template>
 
 <style>
-html, body { 
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; 
+html,
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
 }
 
 /* Smooth scrolling */
