@@ -1,6 +1,8 @@
+// plugins/fb-pixel.client.ts
 export default defineNuxtPlugin(() => {
     const PIXEL_ID = '700882859115530'
 
+    // Carrega o fbq uma única vez no cliente
     if (import.meta.client && !(window as any).fbq) {
         (function (f: any, b: any, e: any, v: any, n?: any, t?: any, s?: any) {
             if (f.fbq) return
@@ -22,6 +24,7 @@ export default defineNuxtPlugin(() => {
             ; (window as any).fbq('init', PIXEL_ID)
     }
 
+    // Dispara PageView sempre que a rota mudar (SPA)
     const router = useRouter()
     router.afterEach(() => {
         if (import.meta.client && (window as any).fbq) {
